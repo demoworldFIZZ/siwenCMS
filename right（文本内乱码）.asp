@@ -1,4 +1,4 @@
-﻿
+﻿<table2>4444444</table2>
 <!--#include file="easyasp/easp.asp" -->
 <%
 dim sql,rs
@@ -323,5 +323,5 @@ cellPadding=0 width=100% border=0>
 </table>
 </body>
 <body>
-	<div>测试项目同步情况22</div>
+	<div>测试项目同步情yangyang</div>
 <body>
