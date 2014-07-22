@@ -1,4 +1,4 @@
-﻿
+﻿<table2>4444444</table2>
 <!--#include file="easyasp/easp.asp" -->
 <%
 dim sql,rs
