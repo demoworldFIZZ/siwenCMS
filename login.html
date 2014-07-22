@@ -1,0 +1,82 @@
+<title>网站管理员登陆</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #1D3647;
+}
+-->
+
+</style>
+<script language="JavaScript">
+function correctPNG()
+{
+    var arVersion = navigator.appVersion.split("MSIE")
+    var version = parseFloat(arVersion[1])
+    if ((version >= 5.5) && (document.body.filters)) 
+    {
+       for(var j=0; j<document.images.length; j++)
+       {
+          var img = document.images[j]
+          var imgName = img.src.toUpperCase()
+          if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+          {
+             var imgID = (img.id) ? "id='" + img.id + "' " : ""
+             var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+             var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+             var imgStyle = "display:inline-block;" + img.style.cssText 
+             if (img.align == "left") imgStyle = "float:left;" + imgStyle
+             if (img.align == "right") imgStyle = "float:right;" + imgStyle
+             if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+             var strNewHTML = "<span " + imgID + imgClass + imgTitle
+             + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+             + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+             + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>" 
+             img.outerHTML = strNewHTML
+             j = j-1
+          }
+       }
+    }    
+}
+window.attachEvent("onload", correctPNG);
+</script>
+
+
+<link href="images/skin.css" rel="stylesheet" type="text/css">
+<body>
+  <div class="_login">
+  	<div class="login_top_bg">
+    </div>
+    <div class="login_bg">
+    	<form name="myform" action="login_check.asp" method="post">
+    		<table width="280" height="59" border="0" align="center" cellpadding="0" cellspacing="0">
+            	<tr >
+             		<th  width="100%" height="40" align="center"  colspan="2"><span class="login_txt_bt">思问家教网后台管理系统</span>
+                </th>
+              </tr>
+           		<tr style="margin-top:10px;">
+                    <td  class="top_hui_text" align="center"><span class="login_txt" >用户名：</span></td>
+                    <td  class="top_hui_text">
+                        <input name="user"  value="" size="30" id="usrebg">
+	                  </td>
+              </tr>
+                 <tr>
+                    <td  class="top_hui_text" align="center"><span class="login_txt" >密 &nbsp;&nbsp;码：</span></td>
+                    <td  class="top_hui_text" >
+                    	<input type="password" size="30" name="pwd" id="passbg">
+	                  </td>
+                  </tr>
+                  <tr>
+                  	<td  align="center"><input name="cs" type="reset" class="button" id="cs" value="取 消" onClick="showConfirmMsg1()"></td>
+                      <td  align="right" height="35"><input name="Submit" type="submit" class="button" id="Submit" value="登 陆"> </td>
+                  </tr><br>
+              </table>
+           </form>
+    </div>
+    <div class="login-buttom-bg">
+		<span class="login-buttom-txt">Copyright &copy; 2013-2014 www.xtyjiajiao.com</span>
+	</div>
+</div>
